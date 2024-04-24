@@ -4,8 +4,8 @@ phases:
   install:
     runtime-versions:
       java: corretto17
-    commands:
-        - apt update -y
+    # commands:
+    #     - apt update -y
   build:
     commands:
         - mvn clean package
