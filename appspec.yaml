@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /output/books.war
-    destination: /opt/tomcat8/webapps
+    destination: /opt/tomcat/webapps
 hooks:
   BeforeInstall:
     - location: scripts/start_server.sh
