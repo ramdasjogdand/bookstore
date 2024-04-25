@@ -8,7 +8,7 @@ phases:
     #     - apt update -y
   build:
     commands:
-        - mvn clean package
+        - mvn clean packagegit 
         - mkdir output
         - cp target/*.war output/books.war
 artifacts:
