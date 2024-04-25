@@ -13,6 +13,4 @@ phases:
         - cp target/*.war output/books.war
 artifacts:
   files:
-        - 'output/*.war'
-        - appspec.yaml
-        - scripts/*
+        - '**/*'
