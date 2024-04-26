@@ -7,11 +7,17 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<properties>
-       <sonar.projectKey>fineshift_users_ram_onlinebookstore_AY0MkPqftVkjWN85-Lm_</sonar.projectKey>
-       <sonar.projectName>Onlinebookstore</sonar.projectName>
+	<!--<properties>-->
+ <!--      <sonar.projectKey>fineshift_users_ram_onlinebookstore_AY0MkPqftVkjWN85-Lm_</sonar.projectKey>-->
+ <!--      <sonar.projectName>Onlinebookstore</sonar.projectName>-->
+ <!--      <sonar.qualitygate.wait>true</sonar.qualitygate.wait>-->
+ <!--   </properties>-->
+     <properties>
+       <sonar.projectKey>My_Bookstore</sonar.projectKey>
+       <sonar.projectName>My_Bookstore</sonar.projectName>
        <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
     </properties>
+    
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<finalName>onlinebookstore</finalName>
