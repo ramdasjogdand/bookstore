@@ -1,27 +1,35 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>onlinebookstore</groupId>
-	<artifactId>onlinebookstore</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>TrainBook</groupId>
+	<artifactId>TrainBook</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-
-	<!--<properties>-->
- <!--      <sonar.projectKey>fineshift_users_ram_onlinebookstore_AY0MkPqftVkjWN85-Lm_</sonar.projectKey>-->
- <!--      <sonar.projectName>Onlinebookstore</sonar.projectName>-->
- <!--      <sonar.qualitygate.wait>true</sonar.qualitygate.wait>-->
- <!--   </properties>-->
-     <properties>
-       <sonar.projectKey>My_Bookstore</sonar.projectKey>
-       <sonar.projectName>My_Bookstore</sonar.projectName>
-       <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
-    </properties>
-    
 	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
-		<finalName>onlinebookstore</finalName>
+		<sourceDirectory>src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -45,48 +53,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.1</version>
-				<configuration>
-					<warSourceDirectory>WebContent</warSourceDirectory>
-				</configuration>
-			</plugin>
 		</plugins>
-		
-      
-    </plugins>
 	</build>
-	<!--<build>-->
-    <!-- To define the plugin version in your parent POM -->
- <!--   <pluginManagement>-->
- <!--     <plugins>-->
- <!--       <plugin>-->
- <!--         <groupId>org.sonarsource.scanner.maven</groupId>-->
- <!--         <artifactId>sonar-maven-plugin</artifactId>-->
- <!--         <version>3.3-SNAPSHOT</version>-->
- <!--       </plugin>-->
- <!--       ...-->
- <!--     </plugins>-->
- <!--   </pluginManagement>-->
-    <!-- To use the plugin goals in your POM or parent POM -->
- <!--   <plugins>-->
- <!--     <plugin>-->
- <!--       <groupId>org.sonarsource.scanner.maven</groupId>-->
- <!--       <artifactId>sonar-maven-plugin</artifactId>-->
- <!--       <version>3.3-SNAPSHOT</version>-->
- <!--     </plugin>-->
- <!--     ...-->
- <!--   </plugins>-->
- <!-- </build>-->
 	<dependencies>
 
 		<dependency>
@@ -110,4 +78,3 @@
 		</dependency>
 	</dependencies>
 </project>
-
