@@ -1,0 +1,11 @@
+<settings>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <properties>
+                <sonar.host.url>http://52.201.252.209:9000</sonar.host.url>
+                <sonar.login>sqp_01c8a9a628929837380cd85432c058ece7ba03aa</sonar.login>
+            </properties>
+        </profile>
+    </profiles>
+</settings>
