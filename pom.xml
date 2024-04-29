@@ -96,7 +96,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
-    <sonar.projectKey>My_Bookstore</sonar.projectKey>
+    <!--<sonar.projectKey>My_Bookstore</sonar.projectKey>-->
+    <sonar.projectKey>My-Bookstore</sonar.projectKey>
     </properties>
 
 	<build>
