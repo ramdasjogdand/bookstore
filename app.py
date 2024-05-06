@@ -16,9 +16,7 @@ class app_test_case(unittest.TestCase):
         self.driver = webdriver.Chrome(driver_path, chrome_options=chromeOptions)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
-        path = 'https://ww.facebook.com/'
-        self.base_url = path
-
+        path = 'https://www.com
     def test_i_d_e_script1(self):
         driver = self.driver
         driver.get(self.base_url)
