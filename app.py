@@ -27,7 +27,8 @@ class app_test_case(unittest.TestCase):
         print(get_title)
         
     def test_invalid_login(self):
-    self.driver.get(self.base_url)
+        driver = self.driver
+        driver.get(self.base_url)
 
     # Find the email and password input fields
     email_field = self.driver.find_element_by_id("email")
