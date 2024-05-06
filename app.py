@@ -26,19 +26,19 @@ class app_test_case(unittest.TestCase):
         get_title = driver.title
         print(get_title)
         
-    def test_invalid_login(self):
+    def test_login(self):
         driver = self.driver
         driver.get(self.base_url)
 
-    # Find the email and password input fields
+    
         email_field = driver.find_element_by_id("email")
         password_field = driver.find_element_by_id("pass")
 
-    # Enter invalid credentials
+    
         email_field.send_keys("8378803626")
         password_field.send_keys("Mangesh@1999")
 
-    # Find the login button and click it
+    
         login_button = driver.find_element_by_id("loginbutton")
         login_button.click()    
 
