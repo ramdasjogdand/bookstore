@@ -16,7 +16,7 @@ class app_test_case(unittest.TestCase):
         self.driver = webdriver.Chrome(driver_path, chrome_options=chromeOptions)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
-        path = 'http://50.19.37.112:8080/books/'
+        path = 'https:facebook.com'
         self.base_url = path
 
     def test_i_d_e_script1(self):
@@ -25,6 +25,21 @@ class app_test_case(unittest.TestCase):
 
         get_title = driver.title
         print(get_title)
+        
+    def test_invalid_login(self):
+    self.driver.get(self.base_url)
+
+    # Find the email and password input fields
+    email_field = self.driver.find_element_by_id("email")
+    password_field = self.driver.find_element_by_id("pass")
+
+    # Enter invalid credentials
+    email_field.send_keys("invalid_email@example.com")
+    password_field.send_keys("invalidpassword")
+
+    # Find the login button and click it
+    login_button = self.driver.find_element_by_name("login")
+    login_button.click()    
 
 
     def tearDown(self):
