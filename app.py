@@ -31,15 +31,15 @@ class app_test_case(unittest.TestCase):
         driver.get(self.base_url)
 
     # Find the email and password input fields
-    email_field = self.driver.find_element_by_id("email")
-    password_field = self.driver.find_element_by_id("pass")
+    email_field = driver.find_element_by_id("email")
+    password_field = driver.find_element_by_id("pass")
 
     # Enter invalid credentials
-    email_field.send_keys("invalid_email@example.com")
-    password_field.send_keys("invalidpassword")
+    email_field.send_keys("8378803626")
+    password_field.send_keys("Mangesh@1999")
 
     # Find the login button and click it
-    login_button = self.driver.find_element_by_name("login")
+    login_button = driver.find_element_by_id("loginbutton")
     login_button.click()    
 
 
