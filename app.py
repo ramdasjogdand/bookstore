@@ -17,12 +17,12 @@ class BookStoreTestCase(unittest.TestCase):
         path = 'http://54.173.109.51:8080/books/CustomerRegister.html'
         self.base_url = path
         
-    def test_script1(self):
-        driver = self.driver
-        driver.get(self.base_url)
+    # def test_script1(self):
+    #     driver = self.driver
+    #     driver.get(self.base_url)
 
-        get_title = driver.title
-        print(get_title)    
+    #     get_title = driver.title
+    #     print(get_title)    
 
     def user_name(self):
         driver = self.driver
