@@ -17,22 +17,23 @@ class BookStoreTestCase(unittest.TestCase):
         path = 'http://54.173.109.51:8080/books/CustomerRegister.html'
         self.base_url = path
         
-    def test_i_d_e_script1(self):
+    def test_script1(self):
         driver = self.driver
         driver.get(self.base_url)
 
         get_title = driver.title
         print(get_title)    
 
-    # def user_name(self):
-    #     self.driver.find_element(By.XPATH, "//*[@id=\"Email\"]").send_keys("pratik@gmail.com")
-    #     self.driver.find_element(By.ID, "passWord").send_keys("1234")
-    #     self.driver.find_element(By.ID, "firstName").send_keys("pratik")
-    #     self.driver.find_element(By.ID, "lastName").send_keys("rathi")
-    #     self.driver.find_element(By.ID, "address").send_keys("pune")
-    #     self.driver.find_element(By.ID, "phno").send_keys("1234567898")
-    #     self.driver.find_element(By.NAME, "acceptance").click()
-    #     self.driver.find_element(By.XPATH, "/html/body/form/table/tbody/tr[2]/td/input[7]").click()
+    def user_name(self):
+        driver = self.driver
+        driver.find_element(By.XPATH, "//*[@id=\"Email\"]").send_keys("pratik@gmail.com")
+        driver.find_element(By.ID, "passWord").send_keys("1234")
+        driver.find_element(By.ID, "firstName").send_keys("pratik")
+        driver.find_element(By.ID, "lastName").send_keys("rathi")
+        driver.find_element(By.ID, "address").send_keys("pune")
+        driver.find_element(By.ID, "phno").send_keys("1234567898")
+        driver.find_element(By.NAME, "acceptance").click()
+        driver.find_element(By.XPATH, "/html/body/form/table/tbody/tr[2]/td/input[7]").click()
 
     # def login(self):
     #     self.driver.find_element(By.XPATH, "//*[@id=\"navbarNav\"]/ul/li[2]/span/a").click()
