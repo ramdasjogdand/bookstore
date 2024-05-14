@@ -2,7 +2,7 @@ from selenium import webdriver
 import unittest
 from time import sleep
 
-class app_test_case(unittest.TestCase):
+class bookstore_test_case(unittest.TestCase):
 
 
     def setUp(self):
@@ -19,20 +19,50 @@ class app_test_case(unittest.TestCase):
         path = 'http://35.175.221.181:8080/books'
         self.base_url = path
 
-    def test_i_d_e_script1(self):
-        driver = self.driver
-        driver.get(self.base_url)
+     def user_name(self):
+        self.driver.find_element(By.XPATH, "//*[@id=\"Email\"]").send_keys("pra2010000@gmail.com")
+        self.driver.find_element(By.ID, "passWord").send_keys("1234")
+        self.driver.find_element(By.ID, "firstName").send_keys("pratik")
+        self.driver.find_element(By.ID, "lastName").send_keys("rathi")
+        self.driver.find_element(By.ID, "address").send_keys("pune")
+        self.driver.find_element(By.ID, "phno").send_keys("1234567898")
+        self.driver.find_element(By.NAME, "acceptance").click()
+        self.driver.find_element(By.XPATH, "/html/body/form/table/tbody/tr[2]/td/input[7]").click()
 
-        get_title = driver.title
-        print(get_title)
+    def login(self):
+        self.driver.find_element(By.XPATH, "//*[@id=\"navbarNav\"]/ul/li[2]/span/a").click()
+        self.driver.find_element(By.XPATH, "/html/body/table/tbody/tr[3]/td/a").click()
+        self.driver.find_element(By.ID, "userName").send_keys("pr10@gmail.com")
+        self.driver.find_element(By.ID, "Password").send_keys("1234")
+        self.driver.find_element(By.XPATH, "/html/body/form/table/tbody/tr[3]/td/input[3]").click()
 
+    def books(self):
+        self.driver.find_element(By.ID, "books").click()
+        self.driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div[1]/div[2]/div[2]/form/input[3]").click()
+        self.driver.find_element(By.XPATH, "//*[@id=\"topmid\"]/form/input").click()
+        self.driver.find_element(By.NAME, "pay").click()
 
-    def tearDown(self):
-        sleep(5)
+    def payment(self):
+        self.driver.find_element(By.ID, "cname").send_keys("pratik")
+        self.driver.find_element(By.ID, "ccnum").send_keys("1111-1111-2222-2222")
+        self.driver.find_element(By.ID, "expmonth").send_keys("may")
+        self.driver.find_element(By.ID, "cvv").send_keys("123")
+        self.driver.find_element(By.ID, "expyear").send_keys("2032")
+        self.driver.find_element(By.ID, "fname").send_keys("pratik rathi")
+        self.driver.find_element(By.XPATH, "//*[@id=\"email\"]").send_keys("pr210@gmail.com")
+        self.driver.find_element(By.ID, "adr").send_keys("pune")
+        self.driver.find_element(By.ID, "city").send_keys("pune")
+        self.driver.find_element(By.ID, "zip").send_keys("41103")
+        self.driver.find_element(By.ID, "state").send_keys("maharashtra")
+        # self.driver.find_element(By.ID, "checked").click()  # Uncomment if necessary
+        self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div/form/input").click()
+
+    def quit_browser(self):
         self.driver.quit()
 
-
-
-
 if __name__ == "__main__":
-    unittest.main()
+    store = BookStore()
+    store.user_name()
+    store.login()
+    store.books()
+    store.payment()
