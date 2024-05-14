@@ -63,8 +63,7 @@ class BookStore:
     #     self.driver.quit()
 
 if __name__ == "__main__":
-    tests = BookStore()
-    tests.setup_method()
+    tests = BookStore()jhfdkj
     tests.test_user_name()
     tests.test_login()
     tests.test_books()
