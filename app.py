@@ -13,7 +13,7 @@ class BookStoreTestCase(unittest.TestCase):
         self.driver = webdriver.Chrome(driver_path, chrome_options=chromeOptions)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
-        path = 'http://54.173.109.51:8080/books/'
+        path = 'http://54.173.109.51:8080/books/CustomerRegister.html'
         self.base_url = path
 
     def user_name(self):
