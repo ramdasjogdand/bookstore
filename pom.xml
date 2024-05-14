@@ -26,8 +26,8 @@
         <version>3.0.0-M5</version>
         <configuration>
           <includes>
-                    <include>**/*app.java</include>
-                    <include>Tests.java</include>
+                    <include>app.java</include>
+                    
                 </includes>    
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
