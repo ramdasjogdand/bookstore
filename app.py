@@ -8,10 +8,19 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 class BookStore(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
-        self.driver.maximize_window()
-        self.driver.get("http://54.173.109.51:8080/books/CustomerRegister.html")
+        chromeOptions = webdriver.ChromeOptions()
+        driver_path = '/usr/local/bin/chromedriver'
+        chromeOptions.add_argument('--headless')
+        chromeOptions.add_argument('--disable-gpu')
+        chromeOptions.add_argument('--no-sandbox')
 
+
+        self.driver = webdriver.Chrome(driver_path, chrome_options=chromeOptions)
+        self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
+        path = 'http://54.173.109.51:8080/books/CustomerRegister.html'
+        self.base_url = path
+        
     def test_user_name(self):
         self.driver.find_element(By.XPATH, "//*[@id=\"Email\"]").send_keys("pratik@gmail.com")
         self.driver.find_element(By.ID, "passWord").send_keys("1234")
