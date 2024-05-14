@@ -1,10 +1,8 @@
 from selenium import webdriver
 import unittest
-from time import sleep
+from selenium.webdriver.common.by import By
 
-class bookstore_test_case(unittest.TestCase):
-
-
+class BookStoreTestCase(unittest.TestCase):
     def setUp(self):
         chromeOptions = webdriver.ChromeOptions()
         driver_path = '/usr/local/bin/chromedriver'
@@ -12,14 +10,13 @@ class bookstore_test_case(unittest.TestCase):
         chromeOptions.add_argument('--disable-gpu')
         chromeOptions.add_argument('--no-sandbox')
 
-
         self.driver = webdriver.Chrome(driver_path, chrome_options=chromeOptions)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
         path = 'http://54.173.109.51:8080/books/'
         self.base_url = path
 
-     def user_name(self):
+    def user_name(self):
         self.driver.find_element(By.XPATH, "//*[@id=\"Email\"]").send_keys("pratik@gmail.com")
         self.driver.find_element(By.ID, "passWord").send_keys("1234")
         self.driver.find_element(By.ID, "firstName").send_keys("pratik")
@@ -54,15 +51,11 @@ class bookstore_test_case(unittest.TestCase):
         self.driver.find_element(By.ID, "city").send_keys("pune")
         self.driver.find_element(By.ID, "zip").send_keys("41103")
         self.driver.find_element(By.ID, "state").send_keys("maharashtra")
-        # self.driver.find_element(By.ID, "checked").click()  # Uncomment if necessary
+        self.driver.find_element(By.ID, "checked").click()  # Uncomment if necessary
         self.driver.find_element(By.XPATH, "/html/body/div/div[2]/div/div/form/input").click()
 
     def quit_browser(self):
         self.driver.quit()
 
 if __name__ == "__main__":
-    store = BookStore()
-    store.user_name()
-    store.login()
-    store.books()
-    store.payment()
+    unittest.main()
