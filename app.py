@@ -18,7 +18,7 @@ class BookStore:
         self.base_url = path
 
     def test_user_name(self):
-        time.sleep(2)  # Add a delay to ensure page load
+        
         self.driver.find_element_by_xpath("//*[@id='Email']").send_keys("pratik@gmail.com")
         self.driver.find_element_by_id("passWord").send_keys("1234")
         self.driver.find_element_by_id("firstName").send_keys("pratik")
@@ -29,7 +29,7 @@ class BookStore:
         self.driver.find_element_by_xpath("/html/body/form/table/tbody/tr[2]/td/input[7]").click()
 
     def test_login(self):
-        time.sleep(2)
+        
         self.driver.find_element_by_xpath("//*[@id='navbarNav']/ul/li[2]/span/a").click()
         self.driver.find_element_by_xpath("/html/body/table/tbody/tr[3]/td/a").click()
         self.driver.find_element_by_id("userName").send_keys("pratik@gmail.com")
@@ -37,14 +37,14 @@ class BookStore:
         self.driver.find_element_by_xpath("/html/body/form/table/tbody/tr[3]/td/input[3]").click()
 
     def test_books(self):
-        time.sleep(2)
+        
         self.driver.find_element_by_id("books").click()
         self.driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/div[2]/div[2]/form/input[3]").click()
         self.driver.find_element_by_xpath("//*[@id='topmid']/form/input").click()
         self.driver.find_element_by_name("pay").click()
 
     def test_payment(self):
-        time.sleep(2)
+        
         self.driver.find_element_by_id("cname").send_keys("pratik")
         self.driver.find_element_by_id("ccnum").send_keys("1111-1111-2222-2222")
         self.driver.find_element_by_id("expmonth").send_keys("may")
@@ -63,9 +63,5 @@ class BookStore:
     #     self.driver.quit()
 
 if __name__ == "__main__":
-    tests = BookStore()
-    tests.test_user_name()
-    tests.test_login()
-    tests.test_books()
-    tests.test_payment()
-    # tests.teardown_method()
+    unittest.main()
+
