@@ -117,14 +117,14 @@ input {
 					name="password" placeholder="Enter Password" id="Password"><br />
 					<br />
 
-					<div class="capbox">
-						<div id="CaptchaDiv">46749</div>
-						<div class="capbox-inner">
-							<input type="hidden" id="txtCaptcha" value="46749"> <input
-								type="text" name="CaptchaInput" id="CaptchaInput" size="15"
-								placeholder="Enter Captcha"><br>
-						</div>
-					</div> <br />
+					<!--<div class="capbox">-->
+					<!--	<div id="CaptchaDiv">46749</div>-->
+					<!--	<div class="capbox-inner">-->
+					<!--		<input type="hidden" id="txtCaptcha" value="46749"> <input-->
+					<!--			type="text" name="CaptchaInput" id="CaptchaInput" size="15"-->
+					<!--			placeholder="Enter Captcha"><br>-->
+					<!--	</div>-->
+					<!--</div> <br />-->
 				<br /> <input class="btn btn-success" type="submit"
 					value=" Login as an User  "></td>
 			</tr>
@@ -150,25 +150,25 @@ input {
 
 		// Captcha Script
 
-		function checkform() {
-			var theform = document.getElementById("theform");
-			var why = "";
+// 		function checkform() {
+// 			var theform = document.getElementById("theform");
+// 			var why = "";
 
-			if (theform.CaptchaInput.value == "") {
-				why += "- Please Enter CAPTCHA Code.\n";
-			}
-			if (theform.CaptchaInput.value != "") {
-				if (ValidCaptcha(theform.CaptchaInput.value) == false) {
-					why += "- The CAPTCHA Code Does Not Match.\n";
-				}
-			}
-			if (why != "") {
-				alert(why);
-				event.preventDefault();
-				return false;
-			}
-			return true;
-		}
+// 			if (theform.CaptchaInput.value == "") {
+// 				why += "- Please Enter CAPTCHA Code.\n";
+// 			}
+// 			if (theform.CaptchaInput.value != "") {
+// 				if (ValidCaptcha(theform.CaptchaInput.value) == false) {
+// 					why += "- The CAPTCHA Code Does Not Match.\n";
+// 				}
+// 			}
+// 			if (why != "") {
+// 				alert(why);
+// 				event.preventDefault();
+// 				return false;
+// 			}
+// 			return true;
+// 		}
 
 		var a = Math.ceil(Math.random() * 9) + '';
 		var b = Math.ceil(Math.random() * 9) + '';
@@ -181,15 +181,15 @@ input {
 		document.getElementById("CaptchaDiv").innerHTML = code;
 
 		// Validate input against the generated number
-		function ValidCaptcha() {
-			var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
-			var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
-			if (str1 == str2) {
-				return true;
-			} else {
-				return false;
-			}
-		}
+// 		function ValidCaptcha() {
+// 			var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+// 			var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+// 			if (str1 == str2) {
+// 				return true;
+// 			} else {
+// 				return false;
+// 			}
+// 		}
 
 		// Remove the spaces from the entered and generated code
 		function removeSpaces(string) {
