@@ -16,11 +16,11 @@ class bookstore_test_case(unittest.TestCase):
         self.driver = webdriver.Chrome(driver_path, chrome_options=chromeOptions)
         self.driver.implicitly_wait(30)
         self.driver.maximize_window()
-        path = 'http://35.175.221.181:8080/books'
+        path = 'http://54.173.109.51:8080/books/'
         self.base_url = path
 
      def user_name(self):
-        self.driver.find_element(By.XPATH, "//*[@id=\"Email\"]").send_keys("pra2010000@gmail.com")
+        self.driver.find_element(By.XPATH, "//*[@id=\"Email\"]").send_keys("pratik@gmail.com")
         self.driver.find_element(By.ID, "passWord").send_keys("1234")
         self.driver.find_element(By.ID, "firstName").send_keys("pratik")
         self.driver.find_element(By.ID, "lastName").send_keys("rathi")
@@ -32,7 +32,7 @@ class bookstore_test_case(unittest.TestCase):
     def login(self):
         self.driver.find_element(By.XPATH, "//*[@id=\"navbarNav\"]/ul/li[2]/span/a").click()
         self.driver.find_element(By.XPATH, "/html/body/table/tbody/tr[3]/td/a").click()
-        self.driver.find_element(By.ID, "userName").send_keys("pr10@gmail.com")
+        self.driver.find_element(By.ID, "userName").send_keys("pratik@gmail.com")
         self.driver.find_element(By.ID, "Password").send_keys("1234")
         self.driver.find_element(By.XPATH, "/html/body/form/table/tbody/tr[3]/td/input[3]").click()
 
